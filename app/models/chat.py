@@ -1,0 +1,10 @@
+from pydantic import BaseModel, Field
+
+
+class ChatRequest(BaseModel):
+    question: str = Field(min_length=1, description="Question to ask the RAG system")
+
+
+class ChatResponse(BaseModel):
+    question: str
+    answer: str
